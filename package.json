@@ -1,0 +1,29 @@
+{
+  "name": "yag-id-hash",
+  "description": "A reversible base62 ID obfuscator",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "author": {
+    "name": "Yassel Avila Gil",
+    "url": "http://yasselavila.com/"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yasselavila/id-hash.git"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.0"
+  },
+  "scripts": {
+    "start": "npm run build:w",
+    "build:pre": "npm run clean && npm run dist:data",
+    "build": "npm run build:pre && npm run tsc",
+    "build:w": "npm run build:pre && npm run tsc:w",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "dist:data": "yag-pkg-dist && cp ./README.md ./dist/ && cp ./LICENSE.txt ./dist/",
+    "tsc": "tsc --outDir ./dist",
+    "tsc:w": "npm run tsc -- -w"
+  }
+}
