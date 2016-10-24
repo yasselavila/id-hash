@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "noEmitHelpers": false,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "removeComments": false,
+    "declaration": true,
+    "sourceMap": false,
+    "rootDir": "src"
+  },
+  "filesGlob": [
+    "**/*.ts",
+    "!node_modules/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}
