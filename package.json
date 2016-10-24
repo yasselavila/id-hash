@@ -8,7 +8,6 @@
     "name": "Yassel Avila Gil",
     "url": "http://yasselavila.com/"
   },
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/yasselavila/id-hash.git"
