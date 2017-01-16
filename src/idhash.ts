@@ -71,6 +71,10 @@ export class IdHash {
       id = parseInt(String(id), 10);
     }
 
+    if (isNaN(id)) {
+      throw new Error('The given ID is not valid, it must be a number');
+    }
+
     id = Math.abs(id);
 
     let ret: string = '';
