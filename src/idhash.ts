@@ -67,7 +67,7 @@ export class IdHash {
    * Encode the given ID
    */
   public encode(id: number): string {
-    if ("number" != typeof id) {
+    if ('number' != typeof id) {
       id = parseInt(String(id), 10);
     }
 
