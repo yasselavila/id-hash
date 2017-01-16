@@ -12,8 +12,8 @@
     "type": "git",
     "url": "https://github.com/yasselavila/id-hash.git"
   },
-  "main": "idhash.js",
-  "typings": "idhash.d.ts",
+  "main": "index.js",
+  "typings": "index.d.ts",
   "devDependencies": {
     "typescript": "^2.0.0"
   },

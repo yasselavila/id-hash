@@ -8,4 +8,6 @@
 
 import { IdHash } from './idhash';
 
-export = IdHash;
+export { IdHash };
+
+export default IdHash;
