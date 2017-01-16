@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "private": true,
+  "homepage": "https://github.com/yasselavila/id-hash",
   "author": {
     "name": "Yassel Avila Gil",
     "url": "http://yasselavila.com/"
@@ -12,19 +13,29 @@
     "type": "git",
     "url": "https://github.com/yasselavila/id-hash.git"
   },
+  "keyworks": [
+    "yag",
+    "id",
+    "hash",
+    "obfuscator",
+    "id-hash",
+    "id-obfuscator",
+    "base62",
+    "base-62"
+  ],
   "main": "index.js",
   "typings": "index.d.ts",
-  "devDependencies": {
-    "typescript": "^2.0.0"
-  },
   "scripts": {
     "start": "npm run build:w",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "dist:data": "yag-pkg-dist && cp ./README.md ./dist/ && cp ./LICENSE.txt ./dist/",
     "build:pre": "npm run clean && npm run dist:data",
     "build": "npm run build:pre && npm run tsc",
     "build:w": "npm run build:pre && npm run tsc:w",
-    "clean": "rm -rf ./dist && mkdir dist",
-    "dist:data": "yag-pkg-dist && cp ./README.md ./dist/ && cp ./LICENSE.txt ./dist/",
     "tsc": "tsc --outDir ./dist",
     "tsc:w": "npm run tsc -- -w"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.0"
   }
 }
