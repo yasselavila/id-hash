@@ -36,6 +36,6 @@
     "tsc:w": "npm run tsc -- -w"
   },
   "devDependencies": {
-    "typescript": "^2.0.0"
+    "typescript": "^2.1.0"
   }
 }
