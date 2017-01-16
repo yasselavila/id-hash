@@ -6,8 +6,14 @@
  * @link      https://github.com/yasselavila/id-hash
  */
 
+/**
+ * Characters to be used bu seed generator
+ */
 const defaultChars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
+/**
+ * IDs hasher
+ */
 export class IdHash {
   /**
    * The seed
@@ -40,6 +46,7 @@ export class IdHash {
    */
   public getSeed(): string {
     if (!this.seed) {
+      /* Clone defaultChars */
       this.seed = String(defaultChars);
     }
 
