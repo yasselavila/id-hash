@@ -110,7 +110,7 @@ export class IdHash {
   /**
    * Decode the given hash
    */
-  public decode(hash: string): number|null {
+  public decode(hash: string): number {
     hash = String(hash);
 
     if (!charsTester.test(hash)) {
@@ -120,7 +120,7 @@ export class IdHash {
       );
     }
 
-    let ret: number|null = 0;
+    let ret: number = 0;
     let seed: string = this.getSeed();
     let radix: number = seed.length;
 
@@ -129,7 +129,7 @@ export class IdHash {
     }
 
     if (isNaN(ret)) {
-      ret = null;
+      throw new Error(`Unknown error: Can not decode '${hash}'`);
     }
 
     return ret;
