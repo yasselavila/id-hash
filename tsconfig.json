@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
@@ -14,21 +15,14 @@
     "strictNullChecks": true,
     "preserveConstEnums": true,
     "noEmitHelpers": false,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
     "removeComments": false,
     "declaration": true,
-    "sourceMap": false,
-    "rootDir": "src"
+    "sourceMap": true,
+    "rootDir": "src",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "filesGlob": [
-    "**/*.ts",
-    "!node_modules/**/*"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
   "compileOnSave": false,
   "buildOnSave": false,
   "atom": {
