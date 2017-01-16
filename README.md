@@ -1,7 +1,7 @@
 yag-id-hash
 =====
 
-Version 0.0.1, Copyright (c) 2016, [Yassel Avila Gil](http://yasselavila.com)
+Version 0.0.1, Copyright (c) 2016-2017, [Yassel Avila Gil](http://yasselavila.com)
 
 ### What is this?
 
