@@ -39,7 +39,7 @@ export class IdHash {
    * Get seed
    */
   public getSeed(): string {
-    if (null == this.seed) {
+    if (!this.seed) {
       this.seed = String(defaultChars);
     }
 
