@@ -12,6 +12,11 @@
 const defaultChars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 /**
+ * Regular expression to test seeds
+ */
+const charsTester: RegExp = /^[a-zA-Z0-9]+$/;
+
+/**
  * IDs hasher
  */
 export class IdHash {
@@ -59,9 +64,10 @@ export class IdHash {
   public setSeed(seed: string): IdHash {
     seed = String(seed).substring(0, 62);
 
-    if (62 != seed.length) {
+    if ((62 != seed.length) || !charsTester.test(seed)) {
       throw new Error(
-        'The given seed is not valid, it must be string with at least 62 characters'
+        'The given seed is not valid, it must be an ' +
+        'alphanumeric string with at least 62 characters'
       );
     }
 
@@ -106,6 +112,13 @@ export class IdHash {
    */
   public decode(hash: string): number|null {
     hash = String(hash);
+
+    if (!charsTester.test(hash)) {
+      throw new Error(
+        'The given hash is not valid, it must be an ' +
+        'alphanumeric string with at least 1 character'
+      );
+    }
 
     let ret: number|null = 0;
     let seed: string = this.getSeed();
