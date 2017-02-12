@@ -3,6 +3,8 @@ yag-id-hash
 
 Version 0.0.1, Copyright (c) 2016-2017, [Yassel Avila Gil](http://yasselavila.com)
 
+[![Build Status](https://travis-ci.org/yasselavila/id-hash.svg?branch=master)](https://travis-ci.org/yasselavila/id-hash)
+
 ### What is this?
 
 A reversible base62 ID obfuscator.
