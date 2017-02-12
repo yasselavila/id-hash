@@ -1,12 +1,22 @@
 /**
  * yag-id-hash
  *
- * @copyright Copyright (c) 2016, Yassel Avila Gil (http://yasselavila.com)
+ * @copyright Copyright (c) 2016-2017, Yassel Avila Gil (http://yasselavila.com)
  * @license   BSD 3 Clause (see LICENSE.txt)
  * @link      https://github.com/yasselavila/id-hash
  */
 "use strict";
+/**
+ * Characters to be used bu seed generator
+ */
 var defaultChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+/**
+ * Regular expression to test seeds
+ */
+var charsTester = /^[a-zA-Z0-9]+$/;
+/**
+ * IDs hasher
+ */
 var IdHash = (function () {
     /**
      * Constructor
@@ -29,7 +39,8 @@ var IdHash = (function () {
      * Get seed
      */
     IdHash.prototype.getSeed = function () {
-        if (null == this.seed) {
+        if (!this.seed) {
+            /* Clone defaultChars */
             this.seed = String(defaultChars);
         }
         return this.seed;
@@ -39,8 +50,9 @@ var IdHash = (function () {
      */
     IdHash.prototype.setSeed = function (seed) {
         seed = String(seed).substring(0, 62);
-        if (62 != seed.length) {
-            throw new Error('The given seed is not valid, it must be string with at least 62 characters');
+        if ((62 != seed.length) || !charsTester.test(seed)) {
+            throw new Error('The given seed is not valid, it must be an ' +
+                'alphanumeric string with at least 62 characters');
         }
         this.seed = seed;
         return this;
@@ -49,8 +61,11 @@ var IdHash = (function () {
      * Encode the given ID
      */
     IdHash.prototype.encode = function (id) {
-        if ("number" != typeof id) {
+        if ('number' != typeof id) {
             id = parseInt(String(id), 10);
+        }
+        if (isNaN(id)) {
+            throw new Error('The given ID is not valid, it must be a number');
         }
         id = Math.abs(id);
         var ret = '';
@@ -71,6 +86,10 @@ var IdHash = (function () {
      */
     IdHash.prototype.decode = function (hash) {
         hash = String(hash);
+        if (!charsTester.test(hash)) {
+            throw new Error('The given hash is not valid, it must be an ' +
+                'alphanumeric string with at least 1 character');
+        }
         var ret = 0;
         var seed = this.getSeed();
         var radix = seed.length;
@@ -78,10 +97,11 @@ var IdHash = (function () {
             ret += seed.indexOf(hash.substr(i, 1)) * Math.pow(radix, (l - i - 1));
         }
         if (isNaN(ret)) {
-            ret = null;
+            throw new Error("Unknown error: Can not decode '" + hash + "'");
         }
         return ret;
     };
     return IdHash;
 }());
 exports.IdHash = IdHash;
+//# sourceMappingURL=idhash.js.map

@@ -1,3 +1,6 @@
+/**
+ * IDs hasher
+ */
 export declare class IdHash {
     /**
      * The seed
@@ -26,5 +29,5 @@ export declare class IdHash {
     /**
      * Decode the given hash
      */
-    decode(hash: string): number | null;
+    decode(hash: string): number;
 }

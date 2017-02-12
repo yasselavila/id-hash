@@ -1,7 +1,7 @@
 {
   "name": "yag-id-hash",
   "description": "A reversible base62 ID obfuscator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "BSD-3-Clause",
   "private": true,
   "homepage": "https://github.com/yasselavila/id-hash",
