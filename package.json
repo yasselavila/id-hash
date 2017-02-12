@@ -32,10 +32,16 @@
     "build:pre": "npm run clean && npm run dist:data",
     "build": "npm run build:pre && npm run tsc",
     "build:w": "npm run build:pre && npm run tsc:w",
-    "tsc": "tsc --outDir ./dist",
-    "tsc:w": "npm run tsc -- -w"
+    "tsc": "tsc --rootDir ./src --outDir ./dist",
+    "tsc:w": "npm run tsc -- -w",
+    "test": "mocha -r ts-node/register test/**/test.ts"
   },
   "devDependencies": {
-    "typescript": "^2.1.0"
+    "typescript": "^2.1.0",
+    "ts-node": "^2.1.0",
+    "mocha": "^3.2.0",
+    "chai": "^3.5.0",
+    "@types/mocha": "^2.2.39",
+    "@types/chai": "^3.4.34"
   }
 }

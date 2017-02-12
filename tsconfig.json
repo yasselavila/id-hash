@@ -18,7 +18,6 @@
     "removeComments": false,
     "declaration": true,
     "sourceMap": true,
-    "rootDir": "src",
     "typeRoots": [
       "./node_modules/@types"
     ]
