@@ -3,7 +3,9 @@ yag-id-hash
 
 Version 0.0.1, Copyright (c) 2016-2017, [Yassel Avila Gil](http://yasselavila.com)
 
-[![Build Status](https://travis-ci.org/yasselavila/id-hash.svg?branch=master)](https://travis-ci.org/yasselavila/id-hash)
+[![License](https://img.shields.io/badge/license-BSD%203--Clause-green.svg?style=flat-square)](https://raw.githubusercontent.com/yasselavila/id-hash/master/LICENSE.txt)
+[![GitHub tag](https://img.shields.io/github/tag/yasselavila/id-hash.svg?style=flat-square)](https://github.com/yasselavila/id-hash/releases)
+[![Travis](https://img.shields.io/travis/yasselavila/id-hash.svg?style=flat-square)](https://travis-ci.org/yasselavila/id-hash)
 
 ### What is this?
 
