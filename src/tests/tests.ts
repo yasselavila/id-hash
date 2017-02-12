@@ -8,7 +8,7 @@
 
 import { expect } from 'chai';
 
-import IdHash from '../src';
+import IdHash from '..';
 
 describe('With default seed', () => {
   const defaultSeed: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

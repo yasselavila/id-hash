@@ -18,10 +18,20 @@
     "removeComments": false,
     "declaration": true,
     "sourceMap": true,
+    "rootDir": "src",
     "typeRoots": [
       "./node_modules/@types"
     ]
   },
+  "filesGlob": [
+    "**/*.ts",
+    "!node_modules/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/tests",
+    "dist"
+  ],
   "compileOnSave": false,
   "buildOnSave": false,
   "atom": {
