@@ -1,21 +1,23 @@
 yag-id-hash
 =====
 
-Version 0.1.0, Copyright (c) 2016-2017, [Yassel Avila Gil](http://yasselavila.com)
-
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-green.svg?style=flat-square)](https://raw.githubusercontent.com/yasselavila/id-hash/master/LICENSE.txt)
 [![GitHub tag](https://img.shields.io/github/tag/yasselavila/id-hash.svg?style=flat-square)](https://github.com/yasselavila/id-hash/releases)
 [![Travis](https://img.shields.io/travis/yasselavila/id-hash.svg?style=flat-square)](https://travis-ci.org/yasselavila/id-hash)
+
+Copyright (c) 2016-2017, [Yassel Avila Gil](http://yasselavila.com). See [LICENSE](./LICENSE.txt) (BSD 3-Clause).
+
+## Documentation
 
 ### What is this?
 
 A reversible base62 ID obfuscator.
 
-### License
+### Installation
 
-[BSD 3 Clause](./LICENSE.txt)
+`yag-id-hash` is available [Node.js](http://npmjs.org) on [npm](http://npmjs.org). To install it, type:
 
-## Documentation
+    $ npm install yag-id-hash
 
 ### Usage
 
@@ -34,12 +36,18 @@ let hasher: IdHash = new IdHash();
 // Get the seed, default is: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 console.log('Seed: %s', hasher.getSeed());
 
-for (let id: number = 101; id <= 150; id++) {
+for (let id: number = 1001; id <= 1005; id++) {
   let encoded: string = hasher.encode(id);
   let decoded: number = hasher.decode(encoded);
 
-  console.log('%s: %s (%s)', id, encoded, decoded);
+  console.log('Encoded %s=%s / Decoded: %s=%s', id, encoded, encoded, decoded);
 }
+
+// Encoded 1001=RT / Decoded: RT=1001
+// Encoded 1002=RW / Decoded: RW=1002
+// Encoded 1003=RC / Decoded: RC=1003
+// Encoded 1004=Rd / Decoded: Rd=1004
+// Encoded 1005=RK / Decoded: RK=1005
 ```
 
 JavaScript (CommonJS):
@@ -61,6 +69,6 @@ for (var id = 101; id <= 150; id++) {
   var encoded = hasher.encode(id);
   var decoded = hasher.decode(encoded);
 
-  console.log('%s: %s (%s)', id, encoded, decoded);
+  console.log('Encoded %s=%s / Decoded: %s=%s', id, encoded, encoded, decoded);
 }
 ```
