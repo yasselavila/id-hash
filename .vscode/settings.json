@@ -15,7 +15,7 @@
   "editor.glyphMargin": true,
 
   // Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty
-  "editor.rulers": [ 120 ],
+  "editor.rulers": [ 100 ],
 
   // Editor: When enabled, will trim trailing whitespace when you save a file.
   "files.trimTrailingWhitespace": true,
