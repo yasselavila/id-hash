@@ -38,11 +38,16 @@ export class IdHash {
   }
 
   /**
-   * Constructor
+   * Create a new ID hasher
+   * @param seed Set to String to use a predefined seed and TRUE togenerate a new one
    */
-  public constructor(seed?: string) {
-    if (seed) {
-      this.setSeed(seed);
+  public constructor(seed?: string|boolean) {
+    if (!!seed) {
+      if (true === seed) {
+        this.useRandomSeed();
+      } else {
+        this.setSeed(seed);
+      }
     }
   }
 
@@ -74,6 +79,14 @@ export class IdHash {
     this.seed = seed;
 
     return this;
+  }
+
+  /**
+   * Use a random seed
+   * Equivalent to: `hasher.setSeed(IdHash.generateSeed());`
+   */
+  public useRandomSeed(): IdHash {
+    return this.setSeed(IdHash.generateSeed());
   }
 
   /**
