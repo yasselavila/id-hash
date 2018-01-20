@@ -45,6 +45,9 @@ lib-cov
 # Coverage directory used by tools like istanbul
 /coverage/
 coverage
+.nyc_output
+./.coveralls.yml
+.coveralls.yml
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
@@ -62,4 +65,8 @@ build/
 .webpack.json
 
 # YAG's
+/nm.zip
 /nm.7z
+/node_modules.zip
+/node_modules.7z
+/manual-tests
