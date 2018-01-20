@@ -1,12 +1,19 @@
 {
+  // TypeScript: SDK.
   "typescript.tsdk": "node_modules/typescript/lib",
 
-  // Insert spaces when pressing Tab.
+  // Editor: Insert spaces when pressing Tab.
   "editor.insertSpaces": true,
 
-  // Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
+  // Editor: Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.
   "editor.tabSize": 2,
 
-  // When enabled, will trim trailing whitespace when you save a file.
-  "files.trimTrailingWhitespace": true
+  // Editor: When enabled, will trim trailing whitespace when you save a file.
+  "files.trimTrailingWhitespace": true,
+
+  // HTML: Wrap attributes.
+  "html.format.wrapAttributes": "force-aligned",
+
+  // HTML: End with a newline.
+  "html.format.endWithNewline": true
 }
