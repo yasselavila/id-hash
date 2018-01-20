@@ -1,17 +1,18 @@
 {
-  "name": "yag-id-hash",
+  "name": "@yag/id-hash",
   "description": "A reversible base62 ID obfuscator",
   "version": "0.1.2",
   "license": "BSD-3-Clause",
   "private": true,
-  "homepage": "https://github.com/yasselavila/id-hash",
-  "author": {
-    "name": "Yassel Avila Gil",
-    "url": "http://yasselavila.com/"
+  "engines": {
+    "node": ">=6.0",
+    "npm": ">=3.0"
   },
+  "homepage": "https://github.com/yasselavila/js-id-hash",
+  "author": "Yassel Avila Gil (http://yasselavila.com/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yasselavila/id-hash.git"
+    "url": "git+https://github.com/yasselavila/js-id-hash"
   },
   "keyworks": [
     "yag",
@@ -21,28 +22,70 @@
     "id-hash",
     "id-obfuscator",
     "base62",
-    "base-62"
+    "base-62",
+    "security"
   ],
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
-    "start": "npm run build:w",
-    "clean": "rm -rf ./dist && mkdir dist",
-    "dist:data": "yag-pkg-dist && cp ./README.md ./dist/ && cp ./LICENSE.txt ./dist/",
-    "build:pre": "npm run clean && npm run dist:data",
-    "build": "npm run build:pre && npm run tsc",
-    "build:w": "npm run build:pre && npm run tsc:w",
-    "tsc": "tsc --outDir ./dist",
+    "start": "npm run test:w",
+    "cover": "cross-env NODE_ENV=test nyc --reporter=lcov npm run test:r",
+    "coveralls": "cat ./coverage/lcov.info | \"./node_modules/.bin/coveralls\"",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "pretest": "npm run lint",
+    "test": "npm run cover",
+    "test:r": "cross-env NODE_ENV=test mocha -r ts-node/register src/**/*.spec.ts",
+    "test:w": "cross-env NODE_ENV=test mocha --watch -r ts-node/register src/**/*.spec.ts",
+    "tsc": "tsc --target es5",
     "tsc:w": "npm run tsc -- -w",
-    "test": "cross-env NODE_ENV=test mocha -r ts-node/register src/**/*.spec.ts"
+    "bundle": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "bundle:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
+    "clean": "rimraf dist && mkdir dist",
+    "pkg:data": "cpx {package.json,README.md,LICENSE.txt} dist/",
+    "build": "run-s clean cover pkg:data tsc bundle"
   },
   "devDependencies": {
-    "typescript": "^2.1.0",
-    "ts-node": "^2.1.0",
-    "mocha": "^3.2.0",
-    "chai": "^3.5.0",
-    "@types/mocha": "^2.2.39",
-    "@types/chai": "^3.4.34",
-    "cross-env": "^3.1.4"
+    "@types/node": "~8.5.2",
+    "@types/mocha": "^2.2.43",
+    "@types/chai": "^4.0.10",
+    "rimraf": "^2.6.2",
+    "npm-run-all": "^4.1.2",
+    "cross-env": "^5.1.2",
+    "webpack": "^3.10.0",
+    "awesome-typescript-loader": "^3.4.1",
+    "uglifyjs-webpack-plugin": "^1.1.4",
+    "mocha": "^4.0.1",
+    "chai": "^4.1.2",
+    "nyc": "^11.4.1",
+    "coveralls": "^3.0.0",
+    "ts-node": "^4.0.2",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "~2.6.2"
+  },
+  "nyc": {
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      ".vscode",
+      "coverage",
+      "dist",
+      "node_modules",
+      "typings",
+      "manual-tests"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html"
+    ],
+    "all": true
   }
 }
