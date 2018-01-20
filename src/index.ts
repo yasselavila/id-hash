@@ -1,9 +1,9 @@
 /**
- * yag-id-hash
+ * @yag/id-hash
  *
- * @copyright Copyright (c) 2016-2017, Yassel Avila Gil (http://yasselavila.com)
+ * @copyright Copyright (c) 2016 - 2018, Yassel Avila Gil (http://yasselavila.com)
  * @license   BSD 3 Clause (see LICENSE.txt)
- * @link      https://github.com/yasselavila/id-hash
+ * @link      https://github.com/yasselavila/js-id-hash
  */
 
 import { IdHash } from './idhash';
