@@ -29,7 +29,7 @@ describe(`Using the default seed (${DEFAULT_SEED})`, () => {
   });
 });
 
-describe(`Using a predefined seed (${DEFAULT_SEED})`, () => {
+describe(`Using a predefined seed (${PREDEFINED_SEED})`, () => {
   it('Seed must be valid', () => {
     const hasher: IdHash = new IdHash(PREDEFINED_SEED);
 
