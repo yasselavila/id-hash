@@ -1,31 +1,45 @@
-yag-id-hash
+@yag/id-hash
 =====
 
-[![License](https://img.shields.io/badge/license-BSD%203--Clause-green.svg?style=flat-square)](https://raw.githubusercontent.com/yasselavila/id-hash/master/LICENSE.txt)
-[![GitHub tag](https://img.shields.io/github/tag/yasselavila/id-hash.svg?style=flat-square)](https://github.com/yasselavila/id-hash/releases)
-[![Travis](https://img.shields.io/travis/yasselavila/id-hash.svg?style=flat-square)](https://travis-ci.org/yasselavila/id-hash)
+[![License](https://img.shields.io/badge/license-BSD%203--Clause-green.svg?style=flat-square)](https://raw.githubusercontent.com/yasselavila/js-id-hash/master/LICENSE.txt)
+[![GitHub tag](https://img.shields.io/github/tag/yasselavila/js-id-hash.svg?style=flat-square)](https://github.com/yasselavila/js-id-hash/releases)
+[![npm version](http://img.shields.io/npm/v/@yag/js-id-hash.svg?style=flat-square)](https://npmjs.org/package/@yag/js-id-hash)
+[![Build Status](https://img.shields.io/travis/yasselavila/js-id-hash.svg?style=flat-square)](https://travis-ci.org/yasselavila/js-id-hash)
+[![Coveralls github](https://img.shields.io/coveralls/github/yasselavila/js-id-hash/master.svg?style=flat-square)](https://coveralls.io/r/yasselavila/js-id-hash?branch=master)
+[![Dependencies Status](https://david-dm.org/yasselavila/js-id-hash.svg?style=flat-square)](https://david-dm.org/yasselavila/js-id-hash)
+[![Known Vulnerabilities](https://snyk.io/test/github/yasselavila/js-id-hash/badge.svg)](https://snyk.io/test/github/yasselavila/js-id-hash)
 
-Copyright (c) 2016-2017, [Yassel Avila Gil](http://yasselavila.com). See [LICENSE](./LICENSE.txt) (BSD 3-Clause).
-
-## Documentation
+Copyright (c) 2016 - 2018, [Yassel Avila Gil](http://yasselavila.com).
 
 ### What is this?
 
+> TODO: Link to base62 / Idea taken from: (Link of article)? / Code initially based on: (tiny php)?
+
 A reversible base62 ID obfuscator.
+
+### License
+
+New BSD License. See [LICENSE.txt](./LICENSE.txt).
+
+## Documentation
+
+> This library includes type definitions, I :cupid: **TypeScript**.
 
 ### Installation
 
-`yag-id-hash` is available [Node.js](http://npmjs.org) on [npm](http://npmjs.org). To install it, type:
+`@yag/id-hash` is available for [Node.js](http://npmjs.org) on [npm](http://npmjs.org). To install it, type:
 
-    $ npm install yag-id-hash
+```bash
+npm install -P @yag/id-hash
+```
 
 ### Usage
 
 TypeScript:
 ```ts
-import IdHash from 'yag-id-hash';
+import IdHash from '@yag/id-hash';
 
-let hasher: IdHash = new IdHash();
+const hasher: IdHash = new IdHash();
 
 // You can set you own seed from config, to keep your hashing uniform
 //hasher.setSeed('J3ViNZBOGTWCdKfwReSjU8Pgcq6ELvMtyxn0apz2547brk1lIoYA9suhDmFHQX');
@@ -37,8 +51,8 @@ let hasher: IdHash = new IdHash();
 console.log('Seed: %s', hasher.getSeed());
 
 for (let id: number = 1001; id <= 1005; id++) {
-  let encoded: string = hasher.encode(id);
-  let decoded: number = hasher.decode(encoded);
+  const encoded: string = hasher.encode(id);
+  const decoded: number = hasher.decode(encoded);
 
   console.log('Encoded %s=%s / Decoded: %s=%s', id, encoded, encoded, decoded);
 }
