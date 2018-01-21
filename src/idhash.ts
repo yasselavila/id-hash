@@ -40,7 +40,7 @@ export class IdHash {
 
   /**
    * Create a new ID hasher
-   * @param seed Set to String to use a predefined seed and TRUE togenerate a new one
+   * @param {?} seed Set to String to use a predefined seed and TRUE to generate a new one
    */
   public constructor(seed?: string|boolean) {
     if (!!seed) {
