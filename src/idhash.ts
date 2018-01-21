@@ -7,14 +7,15 @@
  */
 
 /**
- * Characters to be used bu seed generator
+ * Regular expressions to test seeds and hashes
  */
-const defaultChars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const CHARS_TESTER: RegExp = /^[a-zA-Z0-9]+$/;
+const SEEDS_TESTER: RegExp = /^[a-zA-Z0-9]{62}$/;
 
 /**
- * Regular expression to test seeds
+ * Characters to be used bu seed generator
  */
-const charsTester: RegExp = /^[a-zA-Z0-9]{62}$/;
+const DEFAULT_CHARS: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 /**
  * IDs hasher
@@ -29,7 +30,7 @@ export class IdHash {
    * Generates a random seed
    */
   public static generateSeed(): string {
-    const chars: string[] = defaultChars.split('');
+    const chars: string[] = DEFAULT_CHARS.split('');
 
     /* Shuffle */
     chars.sort(() => 0.5 - Math.random());
@@ -56,8 +57,8 @@ export class IdHash {
    */
   public getSeed(): string {
     if (!this.seed) {
-      /* Clone defaultChars */
-      this.seed = String(defaultChars);
+      /* Clone DEFAULT_CHARS */
+      this.seed = String(DEFAULT_CHARS);
     }
 
     return this.seed;
@@ -69,7 +70,7 @@ export class IdHash {
   public setSeed(seed: string): IdHash {
     seed = String(seed).substring(0, 62);
 
-    if (!charsTester.test(seed)) {
+    if (!SEEDS_TESTER.test(seed)) {
       throw new Error(
         `The given seed (${seed}) is not valid, it must be an
          alphanumeric string with at least 62 characters`
@@ -82,7 +83,6 @@ export class IdHash {
   }
 
   /**
-   * Use a random seed
    * Equivalent to: `hasher.setSeed(IdHash.generateSeed());`
    */
   public useRandomSeed(): IdHash {
@@ -98,7 +98,7 @@ export class IdHash {
     }
 
     if (isNaN(id)) {
-      throw new Error('The given ID is not valid, it must be a valid integer');
+      throw new Error(`The given ID (${id}) is not valid, it must be a valid integer`);
     }
 
     id = Math.abs(id);
@@ -126,10 +126,10 @@ export class IdHash {
   public decode(hash: string): number {
     hash = String(hash);
 
-    if (!charsTester.test(hash)) {
+    if (!CHARS_TESTER.test(hash)) {
       throw new Error(
-        'The given hash is not valid, it must be an ' +
-        'alphanumeric string with at least 1 character'
+        `The given hash (${hash}) is not valid, it must be an
+         alphanumeric string with at least 1 character`
       );
     }
 

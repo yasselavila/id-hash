@@ -16,41 +16,59 @@ const PREDEFINED_SEED: string = 'J3ViNZBOGTWCdKfwReSjU8Pgcq6ELvMtyxn0apz2547brk1
 describe(`Using the default seed (${DEFAULT_SEED})`, () => {
   it('Seed must be valid', () => {
     const hasher: IdHash = new IdHash();
+    const seed: string = hasher.getSeed();
 
-    const result: string = hasher.getSeed();
-    expect(result).to.equal(DEFAULT_SEED);
+    expect(seed).to.equal(DEFAULT_SEED);
   });
 
-  it('"1000" should be equal to "QI"', () => {
+  it('encode(1000) should be equal to "QI"', () => {
     const hasher: IdHash = new IdHash();
+    const encoded: string = hasher.encode(1000);
 
-    const result: string = hasher.encode(1000);
-    expect(result).to.equal('QI');
+    expect(encoded).to.equal('QI');
+  });
+
+  it('decode("QI") should be equal to "1000"', () => {
+    const hasher: IdHash = new IdHash();
+    const encoded: string = hasher.encode(1000);
+    const decoded: number = hasher.decode(encoded);
+
+    expect(decoded).to.equal(1000);
   });
 });
 
 describe(`Using a predefined seed (${PREDEFINED_SEED})`, () => {
   it('Seed must be valid', () => {
     const hasher: IdHash = new IdHash(PREDEFINED_SEED);
+    const seed: string = hasher.getSeed();
 
-    const result: string = hasher.getSeed();
-    expect(result).to.equal(PREDEFINED_SEED);
+    expect(seed).to.equal(PREDEFINED_SEED);
   });
 
-  it('"1000" should be equal to "RG"', () => {
+  it('encode(1000) should be equal to "RG"', () => {
+    /* Manually using 'setSeed()' on purpose */
     const hasher: IdHash = new IdHash();
     hasher.setSeed(PREDEFINED_SEED);
 
-    const result: string = hasher.encode(1000);
-    expect(result).to.equal('RG');
+    const encoded: string = hasher.encode(1000);
+
+    expect(encoded).to.equal('RG');
+  });
+
+  it('decode("RG") should be equal to "1000"', () => {
+    const hasher: IdHash = new IdHash(PREDEFINED_SEED);
+    const encoded: string = hasher.encode(1000);
+    const decoded: number = hasher.decode(encoded);
+
+    expect(decoded).to.equal(1000);
   });
 });
 
 describe('Random seeds', () => {
   it('Via constructor', () => {
     const hasher: IdHash = new IdHash(true);
-
     const test: boolean = DEFAULT_SEED === hasher.getSeed();
+
     expect(test).to.equal(false);
   });
 
@@ -59,6 +77,7 @@ describe('Random seeds', () => {
     hasher.useRandomSeed();
 
     const test: boolean = DEFAULT_SEED === hasher.getSeed();
+
     expect(test).to.equal(false);
   });
 });
