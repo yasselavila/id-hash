@@ -5,14 +5,13 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=6.0",
-    "npm": ">=3.0"
+    "node": ">=4.2.0"
   },
   "homepage": "https://github.com/yasselavila/js-id-hash",
   "author": "Yassel Avila Gil (http://yasselavila.com/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yasselavila/js-id-hash"
+    "url": "git+https://github.com/yasselavila/js-id-hash.git"
   },
   "keyworks": [
     "yag",
