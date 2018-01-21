@@ -35,17 +35,18 @@ npm install -P @yag/id-hash
 
 ### Usage
 
-TypeScript:
+###### TypeScript:
 ```ts
 import IdHash from '@yag/id-hash';
 
 const hasher: IdHash = new IdHash();
 
-// You can set you own seed from config, to keep your hashing uniform
-//hasher.setSeed('J3ViNZBOGTWCdKfwReSjU8Pgcq6ELvMtyxn0apz2547brk1lIoYA9suhDmFHQX');
+// You can set your own seed from configuration, to keep your hashing uniform
+// hasher.setSeed('J3ViNZBOGTWCdKfwReSjU8Pgcq6ELvMtyxn0apz2547brk1lIoYA9suhDmFHQX');
 
 // Or you can generate a new one
-//hasher.setSeed(IdHash.generateSeed());
+// hasher.useRandomSeed(); // or...
+// hasher.setSeed(IdHash.generateSeed());
 
 // Get the seed, default is: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 console.log('Seed: %s', hasher.getSeed());
@@ -64,17 +65,17 @@ for (let id: number = 1001; id <= 1005; id++) {
 // Encoded 1005=RK / Decoded: RK=1005
 ```
 
-JavaScript (CommonJS):
+###### JavaScript (ES5 / CommonJS):
 ```js
 var IdHash = require('yag-id-hash').IdHash;
 
 var hasher = new IdHash();
 
-// You can set you own seed from config, to keep your hashing uniform
-//hasher.setSeed('J3ViNZBOGTWCdKfwReSjU8Pgcq6ELvMtyxn0apz2547brk1lIoYA9suhDmFHQX');
+// You can set your own seed from configuration, to keep your hashing uniform
+// hasher.setSeed('J3ViNZBOGTWCdKfwReSjU8Pgcq6ELvMtyxn0apz2547brk1lIoYA9suhDmFHQX');
 
 // Or you can generate a new one
-//hasher.setSeed(IdHash.generateSeed());
+// hasher.setSeed(IdHash.generateSeed());
 
 // Get the seed, default is: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 console.log('Seed: %s', hasher.getSeed());
@@ -85,4 +86,23 @@ for (var id = 101; id <= 150; id++) {
 
   console.log('Encoded %s=%s / Decoded: %s=%s', id, encoded, encoded, decoded);
 }
+```
+
+###### Directly in (*legacy?*) browsers:
+```html
+<!-- 1kb gzipped / ~900 bytes if you use Brotli ;-) -->
+<script src="/node_modules/@yag/id-hash/bundles/idhash.umd.bundle.js"></script>
+<script>
+
+  var PREDEFINED_SEED = 'vMtyxn0apz25ViNZBOJ3SjU8Pgcq6ELGTWCdKfwRe47brk1lIoYA9suhDmFHQX';
+  var hasher = new IdHash(PREDEFINED_SEED);
+
+  var m1 = 1000;
+  var r1_1 = hasher.encode(m1);
+  var r1_2 = hasher.decode(r1_1);
+
+  alert("r1_1 === 'Bp': " + ( r1_1 === 'Bp' )); // true
+  alert("r1_2 === 1000: " + ( r1_2 === m1 ));   // true
+
+</script>
 ```
