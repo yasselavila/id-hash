@@ -3,7 +3,7 @@
 
 [![License](https://img.shields.io/badge/license-BSD%203--Clause-green.svg?style=flat-square)](https://raw.githubusercontent.com/yasselavila/js-id-hash/master/LICENSE.txt)
 [![GitHub tag](https://img.shields.io/github/tag/yasselavila/js-id-hash.svg?style=flat-square)](https://github.com/yasselavila/js-id-hash/releases)
-[![npm version](http://img.shields.io/npm/v/@yag/js-id-hash.svg?style=flat-square)](https://npmjs.org/package/@yag/js-id-hash)
+[![npm version](http://img.shields.io/npm/v/@yag/js-id-hash.svg?style=flat-square)](https://npmjs.org/package/@yag/id-hash)
 [![Build Status](https://img.shields.io/travis/yasselavila/js-id-hash.svg?style=flat-square)](https://travis-ci.org/yasselavila/js-id-hash)
 [![Coveralls github](https://img.shields.io/coveralls/github/yasselavila/js-id-hash/master.svg?style=flat-square)](https://coveralls.io/r/yasselavila/js-id-hash?branch=master)
 [![Dependencies Status](https://david-dm.org/yasselavila/js-id-hash.svg?style=flat-square)](https://david-dm.org/yasselavila/js-id-hash)
