@@ -13,9 +13,11 @@ Copyright (c) 2016 - 2018, [Yassel Avila Gil](http://yasselavila.com).
 
 ### What is this?
 
-> TODO: Link to base62 / Idea taken from: (Link of article)? / Code initially based on: (tiny php)?
-
 A reversible base62 ID obfuscator.
+
+> Idea taken from: [Auto-Incrementing IDs: Giving your Data Away](https://philsturgeon.uk/http/2015/09/03/auto-incrementing-to-destruction/).
+
+> Code initially based on: [Tiny: A reversible base62 ID obfuscater](https://github.com/zackkitzmiller/tiny-php/).
 
 ### License
 
