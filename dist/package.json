@@ -1,27 +1,29 @@
 {
-  "name": "yag-id-hash",
+  "name": "@yag/id-hash",
   "description": "A reversible base62 ID obfuscator",
-  "version": "0.1.1",
+  "version": "1.0.0-beta.0",
   "license": "BSD-3-Clause",
-  "homepage": "https://github.com/yasselavila/id-hash",
-  "author": {
-    "name": "Yassel Avila Gil",
-    "url": "http://yasselavila.com/"
+  "engines": {
+    "node": ">=6.12"
   },
+  "homepage": "https://github.com/yasselavila/js-id-hash",
+  "author": "Yassel Avila Gil (http://yasselavila.com/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yasselavila/id-hash.git"
+    "url": "git+https://github.com/yasselavila/js-id-hash.git"
   },
-  "keyworks": [
-    "yag",
+  "keywords": [
     "id",
     "hash",
     "obfuscator",
     "id-hash",
     "id-obfuscator",
+    "opaque-id",
     "base62",
-    "base-62"
+    "base-62",
+    "security"
   ],
+  "es2015": "es2015/index.js",
   "main": "index.js",
   "typings": "index.d.ts"
 }

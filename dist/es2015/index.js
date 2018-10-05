@@ -8,3 +8,4 @@
 import { IdHash } from './idhash';
 export { IdHash };
 export default IdHash;
+//# sourceMappingURL=index.js.map
