@@ -16,7 +16,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 /* Env */
 const nodeEnv = env.NODE_ENV || 'production';
-const isProd = ('production' === nodeEnv);
+const isProd = 'production' === nodeEnv;
 
 /* Plugins */
 const plugins = [
@@ -57,7 +57,7 @@ if (isProd) {
  */
 module.exports = {
   entry: {
-    'idhash': path.resolve('src/index')
+    idhash: path.resolve('src/index')
   },
   output: {
     path: path.resolve('dist/bundles'),
