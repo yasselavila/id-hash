@@ -7,9 +7,7 @@
  */
 
 import { expect } from 'chai';
-
-import IdHashDefaultExport from './index';
-import { IdHash } from './index';
+import IdHashDefaultExport, { IdHash } from './index';
 
 describe('Provide classes', () => {
   it('default', () => {

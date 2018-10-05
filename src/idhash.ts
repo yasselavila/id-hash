@@ -42,7 +42,7 @@ export class IdHash {
    * Create a new ID hasher
    * @param {?} seed Set to String to use a predefined seed and TRUE to generate a new one
    */
-  public constructor(seed?: string|boolean) {
+  public constructor(seed?: string | boolean) {
     if (!!seed) {
       if (true === seed) {
         this.useRandomSeed();
@@ -138,7 +138,7 @@ export class IdHash {
     const radix: number = seed.length;
 
     for (let i: number = 0, l: number = hash.length; i < l; i++) {
-      ret += seed.indexOf(hash.substr(i, 1)) * Math.pow(radix, (l - i - 1));
+      ret += seed.indexOf(hash.substr(i, 1)) * Math.pow(radix, l - i - 1);
     }
 
     if (isNaN(ret)) {

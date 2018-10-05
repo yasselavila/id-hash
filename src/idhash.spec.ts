@@ -7,7 +7,6 @@
  */
 
 import { expect } from 'chai';
-
 import { IdHash } from './idhash';
 
 const DEFAULT_SEED: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
