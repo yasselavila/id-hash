@@ -24,6 +24,7 @@
     "base-62",
     "security"
   ],
+  "es2015": "es2015/index.js",
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
@@ -35,8 +36,11 @@
     "test": "npm run cover",
     "test:r": "cross-env NODE_ENV=test mocha -r ts-node/register src/**/*.spec.ts",
     "test:w": "cross-env NODE_ENV=test mocha --watch -r ts-node/register src/**/*.spec.ts",
-    "tsc": "tsc --target es5",
-    "tsc:w": "npm run tsc -- -w",
+    "tsc:es2015": "tsc --target es2015 --module es2015 --outDir dist/es2015",
+    "tsc:es2015:w": "npm run tsc:es2015 -- -w",
+    "tsc:es5": "tsc --target es5",
+    "tsc:es5:w": "npm run tsc:es5 -- -w",
+    "tsc": "run-s tsc:es5 tsc:es2015",
     "bundle": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "bundle:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "clean": "rimraf dist && mkdir dist",

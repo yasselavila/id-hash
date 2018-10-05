@@ -21,6 +21,7 @@ const dist = {
   author: src.author,
   repository: src.repository,
   keywords: src.keywords,
+  es2015: src.es2015,
   main: 'index.js',
   typings: 'index.d.ts'
 };
