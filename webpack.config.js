@@ -56,6 +56,7 @@ if (isProd) {
  * Export config
  */
 module.exports = {
+  mode: isProd ? 'production' : 'development',
   entry: {
     idhash: path.resolve('src/index')
   },
@@ -71,7 +72,7 @@ module.exports = {
     extensions: ['.ts', '.tsx']
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader'
