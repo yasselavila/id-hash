@@ -9,5 +9,5 @@ var m1 = 1000;
 var r1_1 = hasher.encode(m1);
 var r1_2 = hasher.decode(r1_1);
 
-console.log(m1, r1_1, ( r1_1 === 'Bp' )); // true
-console.log(r1_1, r1_2, ( r1_2 === m1 )); // true
+console.log(m1, r1_1, r1_1 === 'Bp'); // true
+console.log(r1_1, r1_2, r1_2 === m1); // true
