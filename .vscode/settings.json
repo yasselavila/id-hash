@@ -11,18 +11,42 @@
   // Controls if the editor should automatically format the pasted content. A formatter must be available and the formatter should be able to format a range in a document.
   "editor.formatOnPaste": false,
 
+  // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
+  "editor.formatOnSave": true,
+
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+
   // Controls whether the editor should render the vertical glyph margin. Glyph margin is mostly used for debugging.
   "editor.glyphMargin": true,
 
   // Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty
-  "editor.rulers": [ 80, 120 ],
+  "editor.rulers": [100],
 
   // Editor: When enabled, will trim trailing whitespace when you save a file.
   "files.trimTrailingWhitespace": true,
 
+  // Enable/disable default HTML formatter
+  "html.format.enable": true,
+
+  // HTML: End with a newline.
+  "html.format.endWithNewline": true,
+
+  // Enable/disable autoclosing of HTML tags.
+  "html.autoClosingTags": true,
+
   // HTML: Wrap attributes.
   "html.format.wrapAttributes": "force-aligned",
 
-  // HTML: End with a newline.
-  "html.format.endWithNewline": true
+  // Maximum amount of characters per line (0 = disable).
+  "html.format.wrapLineLength": 100,
+
+  // Indent <head> and <body> sections.
+  "html.format.indentInnerHtml": true,
+
+  // Maximum number of line breaks to be preserved in one chunk. Use 'null' for unlimited.
+  "html.format.maxPreserveNewLines": 1,
+
+  "html.format.extraLiners": "",
 }
