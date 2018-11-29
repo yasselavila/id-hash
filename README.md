@@ -92,7 +92,7 @@ for (var id = 101; id <= 150; id++) {
 
 ###### Directly in (*legacy?*) browsers:
 ```html
-<!-- 1kb gzipped / ~900 bytes if you use Brotli ;-) -->
+<!-- 1.14 kb gzipped / ~1022 bytes if you use Brotli ;-) -->
 <script src="/node_modules/@yag/id-hash/bundles/idhash.umd.bundle.js"></script>
 <script>
 
