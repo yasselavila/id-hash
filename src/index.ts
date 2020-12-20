@@ -6,8 +6,9 @@
  * @link      https://github.com/yasselavila/js-id-hash
  */
 
-import { IdHash } from './idhash';
+import { IdHash } from './idhash.class';
 
+export * from './idhash.functions';
 export { IdHash };
 
 export default IdHash;

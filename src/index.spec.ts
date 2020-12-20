@@ -7,14 +7,22 @@
  */
 
 import { expect } from 'chai';
-import IdHashDefaultExport, { IdHash } from './index';
+import IdHashDefaultExport, { decode, encode, IdHash } from './index';
 
-describe('Provide classes', () => {
+describe('Public API', () => {
   it('default', () => {
     expect(IdHashDefaultExport).to.be.an('function');
   });
 
-  it('IdHash', () => {
+  it('IdHash class', () => {
     expect(IdHash).to.be.an('function');
+  });
+
+  it('encode()', () => {
+    expect(encode).to.be.an('function');
+  });
+
+  it('decode()', () => {
+    expect(decode).to.be.an('function');
   });
 });
