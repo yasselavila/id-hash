@@ -5,7 +5,3 @@
  * @license   BSD 3 Clause (see LICENSE.txt)
  * @link      https://github.com/yasselavila/js-id-hash
  */
-import { IdHash } from './idhash.class';
-export * from './idhash.functions';
-export { IdHash };
-export default IdHash;

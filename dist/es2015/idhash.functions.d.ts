@@ -5,7 +5,11 @@
  * @license   BSD 3 Clause (see LICENSE.txt)
  * @link      https://github.com/yasselavila/js-id-hash
  */
-import { IdHash } from './idhash.class';
-export * from './idhash.functions';
-export { IdHash };
-export default IdHash;
+/**
+ * Encode the given ID
+ */
+export declare function encode(id: number, seed?: string): string;
+/**
+ * Decode the given hash
+ */
+export declare function decode(hash: string, seed?: string): number;

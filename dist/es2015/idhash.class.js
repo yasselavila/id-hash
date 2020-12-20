@@ -1,7 +1,7 @@
 /**
  * @yag/id-hash
  *
- * @copyright Copyright (c) 2016 - 2018, Yassel Avila Gil (http://yasselavila.com)
+ * @copyright Copyright (c) 2016 - 2020, Yassel Avila Gil (https://twitter.com/yasselavila)
  * @license   BSD 3 Clause (see LICENSE.txt)
  * @link      https://github.com/yasselavila/js-id-hash
  */
@@ -19,15 +19,6 @@ const DEFAULT_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
  */
 export class IdHash {
     /**
-     * Generates a random seed
-     */
-    static generateSeed() {
-        const chars = DEFAULT_CHARS.split('');
-        /* Shuffle */
-        chars.sort(() => 0.5 - Math.random());
-        return chars.join('');
-    }
-    /**
      * Create a new ID hasher
      * @param {?} seed Set to String to use a predefined seed and TRUE to generate a new one
      */
@@ -40,6 +31,15 @@ export class IdHash {
                 this.setSeed(seed);
             }
         }
+    }
+    /**
+     * Generates a random seed
+     */
+    static generateSeed() {
+        const chars = DEFAULT_CHARS.split('');
+        /* Shuffle */
+        chars.sort(() => 0.5 - Math.random());
+        return chars.join('');
     }
     /**
      * Get seed
@@ -114,4 +114,4 @@ export class IdHash {
         return ret;
     }
 }
-//# sourceMappingURL=idhash.js.map
+//# sourceMappingURL=idhash.class.js.map
