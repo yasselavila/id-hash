@@ -2,11 +2,12 @@
 /**
  * @yag/id-hash
  *
- * @copyright Copyright (c) 2016 - 2018, Yassel Avila Gil (http://yasselavila.com)
+ * @copyright Copyright (c) 2016 - 2020, Yassel Avila Gil (https://twitter.com/yasselavila)
  * @license   BSD 3 Clause (see LICENSE.txt)
  * @link      https://github.com/yasselavila/js-id-hash
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.IdHash = void 0;
 /**
  * Regular expressions to test seeds and hashes
  */
@@ -116,4 +117,4 @@ var IdHash = /** @class */ (function () {
     return IdHash;
 }());
 exports.IdHash = IdHash;
-//# sourceMappingURL=idhash.js.map
+//# sourceMappingURL=idhash.class.js.map

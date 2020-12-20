@@ -9,7 +9,7 @@
 [![Dependencies Status](https://david-dm.org/yasselavila/js-id-hash.svg?style=flat-square)](https://david-dm.org/yasselavila/js-id-hash)
 [![Known Vulnerabilities](https://snyk.io/test/github/yasselavila/js-id-hash/badge.svg)](https://snyk.io/test/github/yasselavila/js-id-hash)
 
-Copyright (c) 2016 - 2018, [Yassel Avila Gil](http://yasselavila.com).
+Copyright (c) 2016 - 2020, Yassel Avila Gil (https://twitter.com/yasselavila).
 
 ### What is this?
 
@@ -25,8 +25,6 @@ New BSD License. See [LICENSE.txt](./LICENSE.txt).
 
 ## Documentation
 
-> This library includes type definitions for **TypeScript**.
-
 ### Installation
 
 `@yag/id-hash` is available for [Node.js](http://npmjs.org) on [npm](http://npmjs.org). To install it, type:
@@ -36,6 +34,16 @@ npm install -P @yag/id-hash
 ```
 
 ### Usage
+
+###### Simple usage:
+```ts
+import { encode, decode } from '@yag/id-hash';
+
+const encoded = encode(1000 /*[, seed ]*/); // 'QI'
+const decoded = decode(encoded /*[, seed ]*/); // 1000
+
+console.log('Encoded/Decoded: ', encoded, '/', decoded);
+```
 
 ###### TypeScript:
 ```ts
